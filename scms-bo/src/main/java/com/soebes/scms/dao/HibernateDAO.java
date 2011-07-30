@@ -3,7 +3,8 @@ package com.soebes.scms.dao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
 
 import com.soebes.scms.bo.BaseBO;
 import com.soebes.scms.hibernate.HibernateUtil;

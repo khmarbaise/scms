@@ -1,8 +1,8 @@
 package com.soebes.scms.hibernate;
 
-import java.util.logging.Logger;
-
 import javax.security.auth.login.Configuration;
+
+import org.apache.log4j.Logger;
 
 import com.soebes.scms.bo.BestellungBO;
 import com.soebes.scms.bo.FilialeBO;
