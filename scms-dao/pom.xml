@@ -1,0 +1,157 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.soebes.scms</groupId>
+    <artifactId>scms</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>scms-dao</artifactId>
+  <name>SCMS :: DAO</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>scms-bo</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>hibernate3-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>hibernate-create-schema</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>hbm2ddl</goal>
+            </goals>
+            <configuration>
+              <components>
+                <component>
+                  <name>hbm2ddl</name>
+                  <implementation>annotationconfiguration</implementation>
+                </component>
+              </components>
+              <componentProperties>
+                <configurationfile>/src/test/resources/hibernate.cfg.xml</configurationfile>
+                <jdk5>true</jdk5>
+                <packagename>com.soebes.scms.bo</packagename>
+                <console>false</console>
+                <outputfilename>create.sql</outputfilename>
+                <drop>false</drop>
+                <create>true</create>
+                <update>false</update>
+                <export>false</export>
+                <format>true</format>
+              </componentProperties>
+            </configuration>
+          </execution>
+          <execution>
+            <id>hibernate-drop-schema</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>hbm2ddl</goal>
+            </goals>
+            <configuration>
+              <components>
+                <component>
+                  <name>hbm2ddl</name>
+                  <implementation>annotationconfiguration</implementation>
+                </component>
+              </components>
+              <componentProperties>
+                <configurationfile>/src/test/resources/hibernate.cfg.xml</configurationfile>
+                <jdk5>true</jdk5>
+                <packagename>com.soebes.scms.bo</packagename>
+                <console>false</console>
+                <outputfilename>drop.sql</outputfilename>
+                <drop>true</drop>
+                <create>false</create>
+                <update>false</update>
+                <export>false</export>
+                <format>true</format>
+              </componentProperties>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>sql-maven-plugin</artifactId>
+
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+          </dependency>
+        </dependencies>
+
+        <!-- common configuration shared by all executions -->
+        <configuration>
+          <driver>${database.driverClassName}</driver>
+          <url>${database.url}</url>
+          <username>${database.root.user}</username>
+          <password>${database.root.password}</password>
+        </configuration>
+        <executions>
+          <execution>
+            <id>drop-database</id>
+            <phase>generate-test-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <sqlCommand>
+                DROP DATABASE IF EXISTS scms;
+                CREATE DATABASE scms;
+                GRANT ALL ON scms.* TO ${database.user} IDENTIFIED BY '${database.password}';
+              </sqlCommand>
+            </configuration>
+          </execution>
+          <execution>
+            <id>create-database</id>
+            <phase>generate-test-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <sqlCommand>
+                USE scms;
+              </sqlCommand>
+              <srcFiles>
+                <srcFile>${project.build.directory}/hibernate3/sql/create.sql</srcFile>
+              </srcFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+
+</project>
+
