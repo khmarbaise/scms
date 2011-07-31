@@ -1,7 +1,8 @@
 package com.soebes.scms.hibernate;
 
 import java.util.Properties;
-import java.util.logging.Logger;
+
+import org.apache.log4j.Logger;
 
 /**
  * This class will handle the access to the different

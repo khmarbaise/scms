@@ -1,6 +1,7 @@
 package com.soebes.scms.hibernate;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+import org.hibernate.cfg.AnnotationConfiguration;
 
 /**
  * This class will handle all Hibernate properties.

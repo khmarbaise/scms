@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Locale;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Example;
 
 import com.soebes.scms.bo.BaseBO;
 import com.soebes.scms.hibernate.HibernateUtil;
