@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
-import com.soebes.scms.bo.BestellungBO;
+import com.soebes.scms.bo.BlogPostBO;
 import com.soebes.scms.bo.FilialeBO;
 import com.soebes.scms.bo.KundeBO;
 import com.soebes.scms.bo.PizzaBO;
@@ -24,7 +24,7 @@ public class HibernateUtil {
 
         // Here we define all annotated classes.
         config.addAnnotatedClass(KundeBO.class);
-        config.addAnnotatedClass(BestellungBO.class);
+        config.addAnnotatedClass(BlogPostBO.class);
         config.addAnnotatedClass(FilialeBO.class);
         config.addAnnotatedClass(PizzaBO.class);
         config.addAnnotatedClass(PizzaGroesseBO.class);

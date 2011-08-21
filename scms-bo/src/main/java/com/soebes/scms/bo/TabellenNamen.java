@@ -34,8 +34,8 @@ public final class TabellenNamen {
     public final static String KUNDE = "kunde";
 
     /**
-     * Name der Tabelle für die {@link BestellungBO} Klasse.
+     * Name der Tabelle für die {@link BlogPostBO} Klasse.
      */
-    public final static String BESTELLUNG = "bestellung";
+    public final static String BLOG_POST = "blogpost";
 
 }

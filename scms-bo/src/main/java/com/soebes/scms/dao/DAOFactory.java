@@ -1,6 +1,6 @@
 package com.soebes.scms.dao;
 
-import com.soebes.scms.bo.BestellungBO;
+import com.soebes.scms.bo.BlogPostBO;
 import com.soebes.scms.bo.FilialeBO;
 import com.soebes.scms.bo.KundeBO;
 import com.soebes.scms.bo.PizzaBO;
@@ -35,7 +35,7 @@ public final class DAOFactory {
         return new IdDAO<ZutatBO>(ZutatBO.class);
     }
 
-    public static IdDAO<BestellungBO> getBestellung() {
-        return new IdDAO<BestellungBO>(BestellungBO.class);
+    public static IdDAO<BlogPostBO> getBestellung() {
+        return new IdDAO<BlogPostBO>(BlogPostBO.class);
     }
 }

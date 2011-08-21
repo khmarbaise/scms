@@ -28,7 +28,7 @@ public final class SequenzNamen {
     public final static String KUNDE = "seq_kunde";
 
     /**
-     * Name der Sequenz für die {@link BestellungBO} Tabelle.
+     * Name der Sequenz für die {@link BlogPostBO} Tabelle.
      */
     public final static String BESTELLUNG = "seq_bestellung";
 }
