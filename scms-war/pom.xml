@@ -25,7 +25,7 @@
           <additionalProjectFacets>
             <jst.jsf>2.0</jst.jsf>
           </additionalProjectFacets>
-          <wtpContextName>supose</wtpContextName>
+          <wtpContextName>scms</wtpContextName>
           <wtpversion>2.0</wtpversion>
         </configuration>
       </plugin>
