@@ -45,6 +45,21 @@
         <version>1.2.14</version>
         <scope>compile</scope>
       </dependency>
+      <dependency>
+      	<groupId>org.hibernate.javax.persistence</groupId>
+      	<artifactId>hibernate-jpa-2.0-api</artifactId>
+      	<version>1.0.1.Final</version>
+      </dependency>
+      <dependency>
+      	<groupId>org.hibernate</groupId>
+      	<artifactId>hibernate-validator</artifactId>
+      	<version>4.2.0.Final</version>
+      </dependency>
+      <dependency>
+      	<groupId>org.hibernate</groupId>
+      	<artifactId>hibernate-entitymanager</artifactId>
+      	<version>3.6.6.Final</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -78,7 +93,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>sql-maven-plugin</artifactId>
-          <version>1.4</version>
+          <version>1.5</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
