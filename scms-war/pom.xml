@@ -23,7 +23,7 @@
         <version>2.8</version>
         <configuration>
           <additionalProjectFacets>
-            <jst.jsf>1.2</jst.jsf>
+            <jst.jsf>2.0</jst.jsf>
           </additionalProjectFacets>
           <wtpContextName>supose</wtpContextName>
           <wtpversion>2.0</wtpversion>
