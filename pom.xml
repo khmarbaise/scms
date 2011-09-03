@@ -11,7 +11,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <database.driverClassName>com.mysql.jdbc.Driver</database.driverClassName>
-    <database.url>jdbc:mysql://localhost:3306/casestudy</database.url>
+    <database.url>jdbc:mysql://localhost:3306/scms</database.url>
     <database.dialect>org.hibernate.dialect.MySQL5Dialect</database.dialect>
 
     <database.root.user>root</database.root.user>
