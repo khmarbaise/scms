@@ -1,8 +1,10 @@
-package com.soebes.scms.bo;
+package com.soebes.scms.bo.blog;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.soebes.scms.bo.BaseBO;
+import com.soebes.scms.bo.TabellenNamen;
 
 @Entity
 @Table(name = TabellenNamen.BLOG_POST)
@@ -14,15 +16,24 @@ public class BlogPostBO extends BaseBO {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getPost() {
         return post;
     }
+
     public void setPost(String post) {
         this.post = post;
     }
+
+//    @OneToMany(targetEntity = CommentBO.class)
+//    public List<CommentBO> getComments() {
+//        //
+//        return null;
+//    }
 
     @Override
     public int hashCode() {
@@ -32,7 +43,7 @@ public class BlogPostBO extends BaseBO {
         result = prime * result + ((title == null) ? 0 : title.hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -55,5 +66,4 @@ public class BlogPostBO extends BaseBO {
         return true;
     }
 
-    
 }

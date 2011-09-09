@@ -199,9 +199,7 @@
                 DROP DATABASE IF EXISTS scms;
                 CREATE DATABASE
                 scms;
-                GRANT ALL ON scms.* TO ${database.user} IDENTIFIED
-                BY
-                '${database.password}';
+                GRANT ALL ON scms.* TO ${database.user} IDENTIFIED BY '${database.password}';
               </sqlCommand>
             </configuration>
           </execution>

@@ -6,12 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
-import com.soebes.scms.bo.BlogPostBO;
-import com.soebes.scms.bo.FilialeBO;
-import com.soebes.scms.bo.KundeBO;
-import com.soebes.scms.bo.PizzaBO;
-import com.soebes.scms.bo.PizzaGroesseBO;
-import com.soebes.scms.bo.ZutatBO;
+import com.soebes.scms.bo.blog.BlogPostBO;
 
 public class HibernateUtil {
     private static Logger LOGGER = Logger.getLogger(HibernateUtil.class);
@@ -23,12 +18,7 @@ public class HibernateUtil {
         AnnotationConfiguration config = new AnnotationConfiguration();
 
         // Here we define all annotated classes.
-        config.addAnnotatedClass(KundeBO.class);
         config.addAnnotatedClass(BlogPostBO.class);
-        config.addAnnotatedClass(FilialeBO.class);
-        config.addAnnotatedClass(PizzaBO.class);
-        config.addAnnotatedClass(PizzaGroesseBO.class);
-        config.addAnnotatedClass(ZutatBO.class);
 
         HibernateConfig.getInstance().configure(config);
         config.setProperty("hibernate.current_session_context_class",
