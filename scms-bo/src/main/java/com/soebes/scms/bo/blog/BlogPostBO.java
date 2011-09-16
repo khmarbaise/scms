@@ -29,12 +29,6 @@ public class BlogPostBO extends BaseBO {
         this.post = post;
     }
 
-//    @OneToMany(targetEntity = CommentBO.class)
-//    public List<CommentBO> getComments() {
-//        //
-//        return null;
-//    }
-
     @Override
     public int hashCode() {
         final int prime = 31;

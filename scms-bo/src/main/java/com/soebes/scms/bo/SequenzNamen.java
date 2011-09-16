@@ -8,7 +8,7 @@ public final class SequenzNamen {
     /**
      * Name der Sequenz für die {@link BlogPostBO} Tabelle.
      */
-    public final static String BESTELLUNG = "seq_bestellung";
+    public final static String BLOG_POST = "seq_blogpost";
 
     /**
      * Name der Sequenz für die {@link CommentBO} Tabelle.

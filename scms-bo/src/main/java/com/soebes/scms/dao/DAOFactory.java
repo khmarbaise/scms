@@ -10,7 +10,7 @@ import com.soebes.scms.bo.blog.BlogPostBO;
  */
 public final class DAOFactory {
 
-    public static IdDAO<BlogPostBO> getBestellung() {
+    public static IdDAO<BlogPostBO> getBlogPost() {
         return new IdDAO<BlogPostBO>(BlogPostBO.class);
     }
 }

@@ -1,7 +1,7 @@
 package com.soebes.scms.hibernate;
 
 import org.apache.log4j.Logger;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 /**
  * This class will handle all Hibernate properties.
@@ -41,7 +41,7 @@ public class HibernateConfig {
         return configuration;
     }
 
-    public void configure(AnnotationConfiguration cfg) {
+    public void configure(Configuration cfg) {
         cfg.setProperty(CONNECTION_URL, bean.getUrl());
         cfg.setProperty(CONNECTION_PASSWORD, bean.getPassword());
         cfg.setProperty(CONNECTION_USERNAME, bean.getUsername());

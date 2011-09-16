@@ -85,7 +85,7 @@
         <executions>
           <execution>
             <id>hibernate-create-schema</id>
-            <phase>generate-test-sources</phase>
+            <phase>process-test-resources</phase>
             <goals>
               <goal>hbm2ddl</goal>
             </goals>
@@ -97,7 +97,7 @@
                 </component>
               </components>
               <componentProperties>
-                <configurationfile>/src/test/resources/hibernate.cfg.xml</configurationfile>
+                <configurationfile>${project.build.testOutputDirectory }/hibernate.cfg.xml</configurationfile>
                 <jdk5>true</jdk5>
                 <packagename>com.soebes.scms.bo</packagename>
                 <console>false</console>
@@ -112,7 +112,7 @@
           </execution>
           <execution>
             <id>hibernate-drop-schema</id>
-            <phase>generate-test-sources</phase>
+            <phase>process-test-resources</phase>
             <goals>
               <goal>hbm2ddl</goal>
             </goals>
@@ -124,9 +124,9 @@
                 </component>
               </components>
               <componentProperties>
-                <configurationfile>/src/test/resources/hibernate.cfg.xml</configurationfile>
+                <configurationfile>${project.build.testOutputDirectory }/hibernate.cfg.xml</configurationfile>
                 <jdk5>true</jdk5>
-                <packagename>com.soebes.scms.bo</packagename>
+                <packagename>com.soebes.scms.bo.blog</packagename>
                 <console>false</console>
                 <outputfilename>drop.sql</outputfilename>
                 <drop>true</drop>

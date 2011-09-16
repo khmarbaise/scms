@@ -13,7 +13,7 @@ import javax.persistence.MappedSuperclass;
  *
  */
 @MappedSuperclass
-public class BaseBO {
+public abstract class BaseBO {
     private Long Id;
 
     @Id

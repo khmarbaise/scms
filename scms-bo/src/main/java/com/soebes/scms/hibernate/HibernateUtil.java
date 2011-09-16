@@ -3,10 +3,10 @@ package com.soebes.scms.hibernate;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
 import com.soebes.scms.bo.blog.BlogPostBO;
+import com.soebes.scms.bo.blog.CommentBO;
 
 public class HibernateUtil {
     private static Logger LOGGER = Logger.getLogger(HibernateUtil.class);
@@ -15,10 +15,11 @@ public class HibernateUtil {
 
     public static Configuration getInitializedConfiguration() {
         LOGGER.debug("HibernateUtil()");
-        AnnotationConfiguration config = new AnnotationConfiguration();
+        Configuration config = new Configuration();
 
         // Here we define all annotated classes.
         config.addAnnotatedClass(BlogPostBO.class);
+        config.addAnnotatedClass(CommentBO.class);
 
         HibernateConfig.getInstance().configure(config);
         config.setProperty("hibernate.current_session_context_class",
