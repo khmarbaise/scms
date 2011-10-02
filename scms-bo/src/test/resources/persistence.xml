@@ -6,7 +6,6 @@
   version="2.0">
    <persistence-unit name="manager1"
    transaction-type="RESOURCE_LOCAL">
-<!--     transaction-type="JTA"> -->
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
       <jta-data-source>java:/DefaultDS</jta-data-source>
 <!--       <mapping-file>ormap.xml</mapping-file> -->

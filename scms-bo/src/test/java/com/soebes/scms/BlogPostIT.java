@@ -15,17 +15,19 @@ import com.soebes.scms.bo.blog.BlogPostBO;
 
 public class BlogPostIT {
     private EntityManager entityManager;
+    private EntityManagerFactory programmaticEmf;
 
     @BeforeTest
     public void beforeTest() {
         Map<String, Object> configOverrides = new HashMap<String, Object>();
-        EntityManagerFactory programmaticEmf = Persistence.createEntityManagerFactory("manager1", configOverrides);
+        programmaticEmf = Persistence.createEntityManagerFactory("manager1", configOverrides);
         entityManager = programmaticEmf.createEntityManager();
     }
     
     @AfterTest
     public void afterTest() {
         entityManager.close();
+        programmaticEmf.close();
     }
 
     @Test

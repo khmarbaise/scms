@@ -15,32 +15,37 @@
   <packaging>war</packaging>
   <name>SCMS :: WAR</name>
 
-<!--   <build> -->
-<!--     <plugins> -->
-<!--       <plugin> -->
-<!--         <groupId>org.apache.maven.plugins</groupId> -->
-<!--         <artifactId>maven-eclipse-plugin</artifactId> -->
-<!--         <version>2.8</version> -->
-<!--         <executions> -->
-<!--           <execution> -->
-<!--             <id>configure-eclipse</id> -->
-<!--             <phase>process-resources</phase> -->
-<!--           <goals> -->
-<!--               <goal>eclipse</goal> -->
-<!--             </goals> -->
-<!--             <configuration> -->
-<!-- 	          <additionalProjectFacets> -->
-<!-- 	            <jst.jsf>2.0</jst.jsf> -->
-<!-- 	          </additionalProjectFacets> -->
-<!-- 	          <wtpContextName>scms</wtpContextName> -->
-<!-- 	          <wtpversion>2.0</wtpversion> -->
-<!--             </configuration> -->
-<!--           </execution> -->
-<!--         </executions> -->
-<!--       </plugin> -->
-<!--     </plugins> -->
-<!--   </build> -->
-  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>some-group-id</groupId>
+                    <artifactId>some-artifact-id</artifactId>
+                    <versionRange>[1.0.0,)</versionRange>
+                    <goals>
+                      <goal>some-goal</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
   <dependencies>
 
     <dependency>
