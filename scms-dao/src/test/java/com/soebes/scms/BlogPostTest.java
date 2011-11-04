@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.soebes.scms.bo.blog.BlogPostBO;
 
-public class BlogPostIT {
+public class BlogPostTest {
     private EntityManager entityManager;
     private EntityManagerFactory programmaticEmf;
 
