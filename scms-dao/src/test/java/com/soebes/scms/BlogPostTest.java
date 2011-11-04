@@ -36,7 +36,10 @@ public class BlogPostTest {
         BlogPostBO bp = new BlogPostBO();
         bp.setPost("This is the first post.");
         bp.setTitle("This is the title of the first post.");
+        
+        entityManager.getTransaction().begin();
         entityManager.persist(bp);
+        entityManager.getTransaction().commit();
     }
 
 }

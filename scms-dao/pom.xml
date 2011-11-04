@@ -16,11 +16,11 @@
   <name>SCMS :: DAO</name>
 
   <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>scms-bo</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+<!--     <dependency> -->
+<!--       <groupId>${project.groupId}</groupId> -->
+<!--       <artifactId>scms-bo</artifactId> -->
+<!--       <version>${project.version}</version> -->
+<!--     </dependency> -->
 
     <dependency>
       <groupId>log4j</groupId>
@@ -46,11 +46,17 @@
       <scope>test</scope>
     </dependency>
 
-          <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.9</version>
-          </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.9</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.6.4</version>
+    </dependency>
 
   </dependencies>
 
@@ -131,7 +137,7 @@
                 <configurationfile>${project.build.testOutputDirectory}/hibernate.cfg.xml</configurationfile>
                 <jdk5>true</jdk5>
                 <packagename>com.soebes.scms.bo.blog</packagename>
-                <console>false</console>
+                <console>true</console>
                 <outputfilename>create.sql</outputfilename>
                 <drop>false</drop>
                 <create>true</create>
@@ -218,55 +224,55 @@
 <!--         </executions> -->
 <!--       </plugin> -->
 
-<!--       <plugin> -->
-<!--         <groupId>org.codehaus.mojo</groupId> -->
-<!--         <artifactId>sql-maven-plugin</artifactId> -->
-<!--         <dependencies> -->
-<!--           <dependency> -->
-<!--             <groupId>mysql</groupId> -->
-<!--             <artifactId>mysql-connector-java</artifactId> -->
-<!--             <version>5.1.9</version> -->
-<!--           </dependency> -->
-<!--         </dependencies> -->
-<!--         <configuration> -->
-<!--           <driver>${database.driverClassName}</driver> -->
-<!--           <url>${database.url}</url> -->
-<!--           <username>${database.root.user}</username> -->
-<!--           <password>${database.root.password}</password> -->
-<!--         </configuration> -->
-<!--         <executions> -->
-<!--           <execution> -->
-<!--             <id>drop-database</id> -->
-<!--             <phase>generate-test-resources</phase> -->
-<!--             <goals> -->
-<!--               <goal>execute</goal> -->
-<!--             </goals> -->
-<!--             <configuration> -->
-<!--               <sqlCommand> -->
-<!--                 DROP DATABASE IF EXISTS scms; -->
-<!--                 CREATE DATABASE -->
-<!--                 scms; -->
-<!--                 GRANT ALL ON scms.* TO ${database.user} IDENTIFIED BY '${database.password}'; -->
-<!--               </sqlCommand> -->
-<!--             </configuration> -->
-<!--           </execution> -->
-<!--           <execution> -->
-<!--             <id>create-database</id> -->
-<!--             <phase>generate-test-resources</phase> -->
-<!--             <goals> -->
-<!--               <goal>execute</goal> -->
-<!--             </goals> -->
-<!--             <configuration> -->
-<!--               <sqlCommand> -->
-<!--                 USE scms; -->
-<!--               </sqlCommand> -->
-<!--               <srcFiles> -->
-<!--                 <srcFile>${project.build.directory}/hibernate3/sql/create.sql</srcFile> -->
-<!--               </srcFiles> -->
-<!--             </configuration> -->
-<!--           </execution> -->
-<!--         </executions> -->
-<!--       </plugin> -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>sql-maven-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <driver>${database.driverClassName}</driver>
+          <url>${database.url}</url>
+          <username>${database.root.user}</username>
+          <password>${database.root.password}</password>
+        </configuration>
+        <executions>
+          <execution>
+            <id>drop-database</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <sqlCommand>
+                DROP DATABASE IF EXISTS scms;
+                CREATE DATABASE
+                scms;
+                GRANT ALL ON scms.* TO ${database.user} IDENTIFIED BY '${database.password}';
+              </sqlCommand>
+            </configuration>
+          </execution>
+          <execution>
+            <id>create-database</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <sqlCommand>
+                USE scms;
+              </sqlCommand>
+              <srcFiles>
+                <srcFile>${project.build.directory}/hibernate3/sql/create.sql</srcFile>
+              </srcFiles>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
