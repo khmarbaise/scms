@@ -19,8 +19,8 @@ public class BlogPostTest {
 
     @BeforeTest
     public void beforeTest() {
-        Map<String, Object> configOverrides = new HashMap<String, Object>();
-        programmaticEmf = Persistence.createEntityManagerFactory("manager1", configOverrides);
+//        Map<String, Object> configOverrides = new HashMap<String, Object>();
+        programmaticEmf = Persistence.createEntityManagerFactory("manager1");
         entityManager = programmaticEmf.createEntityManager();
     }
     

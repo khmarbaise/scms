@@ -45,6 +45,13 @@
       <artifactId>testng</artifactId>
       <scope>test</scope>
     </dependency>
+
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+          </dependency>
+
   </dependencies>
 
   <build>
@@ -96,90 +103,96 @@
         <filtering>true</filtering>
       </testResource>
     </testResources>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <plugins>
-<!--       <plugin> -->
-<!--         <groupId>org.codehaus.mojo</groupId> -->
-<!--         <artifactId>hibernate3-maven-plugin</artifactId> -->
-<!--         <executions> -->
-<!--           <execution> -->
-<!--             <id>hibernate-create-schema</id> -->
-<!--             <phase>process-test-resources</phase> -->
-<!--             <goals> -->
-<!--               <goal>hbm2ddl</goal> -->
-<!--             </goals> -->
-<!--             <configuration> -->
-<!--               <components> -->
-<!--                 <component> -->
-<!--                   <name>hbm2ddl</name> -->
-<!--                   <implementation>annotationconfiguration</implementation> -->
-<!--                 </component> -->
-<!--               </components> -->
-<!--               <componentProperties> -->
-<!--                 <configurationfile>${project.build.testOutputDirectory }/hibernate.cfg.xml</configurationfile> -->
-<!--                 <jdk5>true</jdk5> -->
-<!--                 <packagename>com.soebes.scms.bo</packagename> -->
-<!--                 <console>false</console> -->
-<!--                 <outputfilename>create.sql</outputfilename> -->
-<!--                 <drop>false</drop> -->
-<!--                 <create>true</create> -->
-<!--                 <update>false</update> -->
-<!--                 <export>false</export> -->
-<!--                 <format>true</format> -->
-<!--               </componentProperties> -->
-<!--             </configuration> -->
-<!--           </execution> -->
-<!--           <execution> -->
-<!--             <id>hibernate-drop-schema</id> -->
-<!--             <phase>process-test-resources</phase> -->
-<!--             <goals> -->
-<!--               <goal>hbm2ddl</goal> -->
-<!--             </goals> -->
-<!--             <configuration> -->
-<!--               <components> -->
-<!--                 <component> -->
-<!--                   <name>hbm2ddl</name> -->
-<!--                   <implementation>annotationconfiguration</implementation> -->
-<!--                 </component> -->
-<!--               </components> -->
-<!--               <componentProperties> -->
-<!--                 <configurationfile>${project.build.testOutputDirectory }/hibernate.cfg.xml</configurationfile> -->
-<!--                 <jdk5>true</jdk5> -->
-<!--                 <packagename>com.soebes.scms.bo.blog</packagename> -->
-<!--                 <console>false</console> -->
-<!--                 <outputfilename>drop.sql</outputfilename> -->
-<!--                 <drop>true</drop> -->
-<!--                 <create>false</create> -->
-<!--                 <update>false</update> -->
-<!--                 <export>false</export> -->
-<!--                 <format>true</format> -->
-<!--               </componentProperties> -->
-<!--             </configuration> -->
-<!--           </execution> -->
-<!--         </executions> -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>hibernate3-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>hibernate-create-schema</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>hbm2ddl</goal>
+            </goals>
+            <configuration>
+              <components>
+                <component>
+                  <name>hbm2ddl</name>
+                  <implementation>annotationconfiguration</implementation>
+                </component>
+              </components>
+              <componentProperties>
+                <configurationfile>${project.build.testOutputDirectory}/hibernate.cfg.xml</configurationfile>
+                <jdk5>true</jdk5>
+                <packagename>com.soebes.scms.bo.blog</packagename>
+                <console>false</console>
+                <outputfilename>create.sql</outputfilename>
+                <drop>false</drop>
+                <create>true</create>
+                <update>false</update>
+                <export>false</export>
+                <format>true</format>
+              </componentProperties>
+            </configuration>
+          </execution>
+          <execution>
+            <id>hibernate-drop-schema</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>hbm2ddl</goal>
+            </goals>
+            <configuration>
+              <components>
+                <component>
+                  <name>hbm2ddl</name>
+                  <implementation>annotationconfiguration</implementation>
+                </component>
+              </components>
+              <componentProperties>
+                <configurationfile>${project.build.testOutputDirectory}/hibernate.cfg.xml</configurationfile>
+                <jdk5>true</jdk5>
+                <packagename>com.soebes.scms.bo.blog</packagename>
+                <console>false</console>
+                <outputfilename>drop.sql</outputfilename>
+                <drop>true</drop>
+                <create>false</create>
+                <update>false</update>
+                <export>false</export>
+                <format>true</format>
+              </componentProperties>
+            </configuration>
+          </execution>
+        </executions>
 
-<!--         <dependencies> -->
-<!--           <dependency> -->
-<!--             <groupId>org.hibernate.javax.persistence</groupId> -->
-<!--             <artifactId>hibernate-jpa-2.0-api</artifactId> -->
-<!--             <version>1.0.1.Final</version> -->
-<!--           </dependency> -->
-<!--           <dependency> -->
-<!--             <groupId>org.hibernate</groupId> -->
-<!--             <artifactId>hibernate-validator</artifactId> -->
-<!--             <version>4.2.0.Final</version> -->
-<!--           </dependency> -->
-<!--           <dependency> -->
-<!--             <groupId>org.hibernate</groupId> -->
-<!--             <artifactId>hibernate-entitymanager</artifactId> -->
-<!--             <version>3.6.6.Final</version> -->
-<!--           </dependency> -->
-<!--           <dependency> -->
-<!--             <groupId>mysql</groupId> -->
-<!--             <artifactId>mysql-connector-java</artifactId> -->
-<!--             <version>5.1.9</version> -->
-<!--           </dependency> -->
-<!--         </dependencies> -->
-<!--       </plugin> -->
+        <dependencies>
+          <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.1.Final</version>
+          </dependency>
+          <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.2.0.Final</version>
+          </dependency>
+          <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.6.6.Final</version>
+          </dependency>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+          </dependency>
+        </dependencies>
+      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

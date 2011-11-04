@@ -43,7 +43,7 @@
 <!--         <mapping resource="org/MyClass.hbm.xml"/> -->
     
         <!-- Hibernate Annotations (and package-info.java) -->
-        <mapping package="com.soebes.scms.bo"/>
+        <mapping package="com.soebes.scms.bo.blog"/>
 
     </session-factory>
 
