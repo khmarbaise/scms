@@ -11,14 +11,12 @@
 <!--       <mapping-file>ormap.xml</mapping-file> -->
 <!--       <jar-file>MyApp.jar</jar-file> -->
             <class>com.soebes.scms.bo.blog.BlogPostBO</class>
-<!--       <class>org.acme.Person</class> -->
-<!--       <class>org.acme.Address</class> -->
       <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
       <validation-mode>CALLBACK</validation-mode>
       <properties>
          <property name="hibernate.dialect" value="${database.dialect}"/>
-         <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-         <property name="hibernate.connection.url" value="${database.url}"/>
+<!--         <property name="hibernate.hbm2ddl.auto" value="create-drop"/> -->
+         <property name="hibernate.connection.url" value="${database.url}${database.database}"/>
          <property name="hibernate.connection.driver_class" value="${database.driverClassName}"/>
          <property name="hibernate.connection.username" value="${database.user}"/>
          <property name="hibernate.connection.password" value="${database.password}"/>

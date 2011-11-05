@@ -12,7 +12,7 @@
     <session-factory>
     
         <!-- Settings for a local HSQL (testing) database. -->
-        <property name="dialect">${database.dialect}</property>
+        <property name="dialect">${database.dialect}XXXX</property>
         <property name="connection.driver_class">${database.driverClassName}</property>
         <property name="connection.url">${database.url}</property>
         <property name="connection.username">${database.user}</property>
