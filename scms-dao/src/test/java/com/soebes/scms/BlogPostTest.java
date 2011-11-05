@@ -1,8 +1,5 @@
 package com.soebes.scms;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -19,7 +16,6 @@ public class BlogPostTest {
 
     @BeforeTest
     public void beforeTest() {
-//        Map<String, Object> configOverrides = new HashMap<String, Object>();
         programmaticEmf = Persistence.createEntityManagerFactory("manager1");
         entityManager = programmaticEmf.createEntityManager();
     }
