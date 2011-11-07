@@ -46,6 +46,7 @@
         <!-- Hibernate Annotations (and package-info.java) -->
 <!--         <mapping package="com.soebes.scms.bo.blog"/> -->
         <mapping class="com.soebes.scms.bo.blog.BlogPostBO"/>
+        <mapping class="com.soebes.scms.bo.blog.CommentBO"/>
 
     </session-factory>
 

@@ -11,6 +11,7 @@
 <!--       <mapping-file>ormap.xml</mapping-file> -->
 <!--       <jar-file>MyApp.jar</jar-file> -->
             <class>com.soebes.scms.bo.blog.BlogPostBO</class>
+            <class>com.soebes.scms.bo.blog.CommentBO</class>
 <!--       <class>org.acme.Person</class> -->
 <!--       <class>org.acme.Address</class> -->
       <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
