@@ -14,11 +14,11 @@ public final class TabellenNamen {
     /**
      * Name der Tabelle für die {@link BlogPostBO} Klasse.
      */
-    public final static String BLOG_POST = "blogpost";
+    public final static String BLOG_POST = "blogposts";
     
     /**
      * Name der Tabelle für die {@link CommentBO} Klasse.
      */
-    public final static String COMMENT = "comment";
+    public final static String COMMENT = "comments";
 
 }

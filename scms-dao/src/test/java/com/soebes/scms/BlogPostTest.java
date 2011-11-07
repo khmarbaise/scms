@@ -1,5 +1,7 @@
 package com.soebes.scms;
 
+import java.util.UUID;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -38,4 +40,15 @@ public class BlogPostTest {
         entityManager.getTransaction().commit();
     }
 
+    @Test
+    public void testHundredthOfPosts() {
+        entityManager.getTransaction().begin();
+        for(int i=0; i<100;i++) {
+            BlogPostBO bp = new BlogPostBO();
+            bp.setPost("Post:" + UUID.randomUUID().toString());
+            bp.setTitle("Title:" + UUID.randomUUID());
+            entityManager.persist(bp);
+        }
+        entityManager.getTransaction().commit();
+    }
 }
