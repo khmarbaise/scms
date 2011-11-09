@@ -3,11 +3,14 @@ package com.soebes.scms.bo.blog;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.envers.Audited;
+
 import com.soebes.scms.bo.BaseBO;
 import com.soebes.scms.bo.TabellenNamen;
 
 
 @Entity
+@Audited
 @Table(name = TabellenNamen.COMMENT)
 public class CommentBO extends BaseBO {
 
