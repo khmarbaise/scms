@@ -143,7 +143,7 @@
                 <configurationfile>${project.build.testOutputDirectory}/hibernate.cfg.xml</configurationfile>
                 <jdk5>true</jdk5>
                 <packagename>com.soebes.scms.bo.blog</packagename>
-                <console>true</console>
+                <console>false</console>
                 <outputfilename>create.sql</outputfilename>
                 <drop>false</drop>
                 <create>true</create>
