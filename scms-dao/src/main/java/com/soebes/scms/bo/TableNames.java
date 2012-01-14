@@ -4,20 +4,20 @@ import com.soebes.scms.bo.blog.BlogPostBO;
 import com.soebes.scms.bo.blog.CommentBO;
 
 /**
- * Definition aller Tabellennamen.
+ * Definition of all table names.
  *
  * @author Karl Heinz Marbaise
  *
  */
-public final class TabellenNamen {
+public final class TableNames {
 
     /**
-     * Name der Tabelle für die {@link BlogPostBO} Klasse.
+     * Name of the table for the {@link BlogPostBO} class.
      */
     public final static String BLOG_POST = "blogposts";
     
     /**
-     * Name der Tabelle für die {@link CommentBO} Klasse.
+     * Name of the table for {@link CommentBO} class.
      */
     public final static String COMMENT = "comments";
 

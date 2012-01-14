@@ -3,7 +3,7 @@ package com.soebes.scms.bo;
 import com.soebes.scms.bo.blog.BlogPostBO;
 import com.soebes.scms.bo.blog.CommentBO;
 
-public final class SequenzNamen {
+public final class SequenceNames {
 
     /**
      * Name der Sequenz für die {@link BlogPostBO} Tabelle.

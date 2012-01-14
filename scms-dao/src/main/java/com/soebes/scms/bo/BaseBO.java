@@ -7,7 +7,7 @@ import javax.persistence.MappedSuperclass;
 
 
 /**
- * Basis für alle BO Klassen.
+ * Base for all BO classes.
  *
  * @author Karl Heinz Marbaise
  *

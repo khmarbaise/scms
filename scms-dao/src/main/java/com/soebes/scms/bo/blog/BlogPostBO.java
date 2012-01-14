@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.soebes.scms.bo.BaseBO;
-import com.soebes.scms.bo.TabellenNamen;
+import com.soebes.scms.bo.TableNames;
 
 @Entity
-@Table(name = TabellenNamen.BLOG_POST)
+@Table(name = TableNames.BLOG_POST)
 public class BlogPostBO extends BaseBO {
 
     private String title;
