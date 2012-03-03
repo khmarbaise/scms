@@ -25,7 +25,7 @@
     <!-- Tomcat Version which will be used for Integration Test -->
     <tomcat.major>6</tomcat.major>
     <tomcat.minor>0</tomcat.minor>
-    <tomcat.patch>32</tomcat.patch>
+    <tomcat.patch>35</tomcat.patch>
     <tomcat.version>${tomcat.major}.${tomcat.minor}.${tomcat.patch}</tomcat.version>
 
   </properties>
