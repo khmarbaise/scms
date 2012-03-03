@@ -14,6 +14,9 @@ public class CommentBO extends BaseBO {
     private String title;
     private String post;
 
+//    @ManyToOne
+//    private BlogPostBO blogPost;
+    
     public String getTitle() {
         return title;
     }
@@ -57,6 +60,12 @@ public class CommentBO extends BaseBO {
             return false;
         return true;
     }
-
-    
+//	public BlogPostBO getBlogPost() {
+//		return blogPost;
+//	}
+//	public void setBlogPost(BlogPostBO blogPost) {
+//		this.blogPost = blogPost;
+//	}
+//
+//    
 }

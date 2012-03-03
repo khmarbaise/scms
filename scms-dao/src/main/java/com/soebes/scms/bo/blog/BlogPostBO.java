@@ -1,5 +1,8 @@
 package com.soebes.scms.bo.blog;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,6 +15,12 @@ public class BlogPostBO extends BaseBO {
 
     private String title;
     private String post;
+    
+//    @OneToMany(mappedBy = "comments")
+//    @JoinColumn(name = "comment_id")
+//    @JoinTable(name= "blogsposts_comments" )
+//    private ArrayList<CommentBO> comments;
+    private String comments;
 
     public String getTitle() {
         return title;
@@ -59,5 +68,13 @@ public class BlogPostBO extends BaseBO {
             return false;
         return true;
     }
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
 
 }
