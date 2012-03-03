@@ -15,37 +15,6 @@
   <packaging>war</packaging>
   <name>SCMS :: WAR</name>
 
-  <build>
-<!--     <pluginManagement> -->
-<!--       <plugins> -->
-<!--         <plugin> -->
-<!--           <groupId>org.eclipse.m2e</groupId> -->
-<!--           <artifactId>lifecycle-mapping</artifactId> -->
-<!--           <version>1.0.0</version> -->
-<!--           <configuration> -->
-<!--             <lifecycleMappingMetadata> -->
-<!--               <pluginExecutions> -->
-<!--                 <pluginExecution> -->
-<!--                   <pluginExecutionFilter> -->
-<!--                     <groupId>org.apache.maven.plugins</groupId> -->
-<!--                     <artifactId>maven-war-plugin</artifactId> -->
-<!--                     <versionRange>[2.1.1,)</versionRange> -->
-<!--                     <goals> -->
-<!--                       <goal>war</goal> -->
-<!--                     </goals> -->
-<!--                   </pluginExecutionFilter> -->
-<!--                   <action> -->
-<!--                     <ignore /> -->
-<!--                   </action> -->
-<!--                 </pluginExecution> -->
-<!--               </pluginExecutions> -->
-<!--             </lifecycleMappingMetadata> -->
-<!--           </configuration> -->
-<!--         </plugin> -->
-<!--       </plugins> -->
-<!--     </pluginManagement> -->
-  </build>
-
   <dependencies>
 
     <dependency>
@@ -88,7 +57,7 @@
     <dependency>
       <groupId>org.glassfish.web</groupId>
       <artifactId>jsp-impl</artifactId>
-      <version>2.1</version>
+      <version>2.2</version>
     </dependency>
 
     <dependency>
